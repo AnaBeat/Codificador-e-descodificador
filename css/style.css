@@ -75,3 +75,8 @@ body {
 .centro{
  text-align: center;
 }
+
+.img{
+  width: 400px;
+  margin: 20px;
+}
