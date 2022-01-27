@@ -17,9 +17,9 @@ A página possui campo para inserção do texto a ser criptografado ou Descripto
 
 ### Tecnologias utilizadas
 
-html
-css
-Javascritpt
+- HTML
+- CSS
+- Javascritpt
 
 ### Resultado final
 
