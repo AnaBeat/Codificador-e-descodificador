@@ -23,4 +23,4 @@ Javascritpt
 
 ### Resultado final
 
-![imagem](https://github.com/AnaBeat/Codificador-e-descodificador/blob/master/img/codsecreto.jpg)
+![imagem](https://github.com/AnaBeat/Codificador-e-descodificador/blob/master/img/codsecreto.JPG)
