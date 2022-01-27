@@ -6,13 +6,14 @@ var descripto = document.querySelector('#btn-descripto');
 var copia = document.getElementById('btn-copy');
 var output = document.querySelector('#msg');
 
+const regex = new RegExp("^[a-z \b]+$");
+
 //Funções
 
 function encriptar() {
   var texto = input.value;
   msg = '';
 
-  if (/^[a-z ,.!?;:()]+$/g.test(input.value)) {
     for (var i = 0; i < texto.length; i++) {
       if (texto[i] == 'e') {
         msg = msg + 'enter';
@@ -28,10 +29,7 @@ function encriptar() {
         msg = msg + texto[i];
       }
     }
-    output.value = msg;
-  }else {
-    output.value = "Erro! Apenas letras minúsculas e sem acentos são aceitas."
-  }
+    output.value = caracteres(msg);
 
 }
 
@@ -41,14 +39,17 @@ cripto.onclick = encriptar;
 function desencriptar(texto) {
   var texto = input.value;
   msg = texto;
+
   msg = msg.replaceAll('enter', 'e');
   msg = msg.replaceAll('ai', 'a');
   msg = msg.replaceAll('imes', 'i');
   msg = msg.replaceAll('ober', 'o');
   msg = msg.replaceAll('ufat', 'u');
 
-  output.value = msg;
+  output.value = caracteres(msg);
+
 }
+
 
 descripto.onclick = desencriptar;
 
@@ -57,3 +58,15 @@ copia.addEventListener('click', function(e) {
     output.select();
     document.execCommand('copy');
 })
+
+
+function caracteres(frase) {
+
+    if (!regex.test(frase)) {
+        return "Erro! Apenas letras minúsculas e sem acentos são aceitas."
+    }
+
+    else {
+        return  frase;
+    }
+}
