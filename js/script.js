@@ -3,7 +3,7 @@ var input = document.querySelector('#input-texto');
 input.focus();
 var cripto = document.querySelector('#btn-cripto');
 var descripto = document.querySelector('#btn-descripto');
-var copiar = document.querySelector('#btn-copy');
+var copia = document.getElementById('btn-copy');
 var output = document.querySelector('#msg');
 
 //Funções
@@ -22,7 +22,7 @@ function encriptar() {
         msg = msg + 'ai';
       }else if (texto[i] == 'o') {
           msg = msg + 'ober';
-      }else if (texto == 'u') {
+      }else if (texto[i] == 'u') {
         msg = msg + 'ufat';
       }else {
         msg = msg + texto[i];
@@ -38,10 +38,22 @@ function encriptar() {
 cripto.onclick = encriptar;
 
 
-function desencriptar() {
+function desencriptar(texto) {
+  var texto = input.value;
+  msg = texto;
+  msg = msg.replaceAll('enter', 'e');
+  msg = msg.replaceAll('ai', 'a');
+  msg = msg.replaceAll('imes', 'i');
+  msg = msg.replaceAll('ober', 'o');
+  msg = msg.replaceAll('ufat', 'u');
 
+  output.value = msg;
 }
 
-function copiar() {
+descripto.onclick = desencriptar;
 
-}
+copia.addEventListener('click', function(e) {
+    e.preventDefault();
+    output.select();
+    document.execCommand('copy');
+})
