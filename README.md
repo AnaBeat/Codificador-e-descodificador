@@ -1,4 +1,4 @@
-# Alura Challenge - Oracle ONE- Semana 1 e 2
+# Alura Challenge - Oracle ONE
 
 ## Decodificador de texto
 
